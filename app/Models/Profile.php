@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Profile extends Model {
     use HasFactory;
@@ -16,4 +17,20 @@ class Profile extends Model {
     protected $fillable = [
         'user_id',
     ];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'user_id' => 'integer',
+    ];
+
+    /**
+     * @return BelongsTo
+     */
+    public function user(): BelongsTo {
+        return $this->belongsTo( User::class );
+    }
 }

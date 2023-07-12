@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Profile;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -26,6 +28,8 @@ class UserFactory extends Factory
         ];
     }
 
+
+
     /**
      * Indicate that the model's email address should be unverified.
      */
@@ -35,4 +39,5 @@ class UserFactory extends Factory
             'email_verified_at' => null,
         ]);
     }
+
 }
